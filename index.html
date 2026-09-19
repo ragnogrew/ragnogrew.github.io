@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美国十次超级导航 - 高速、稳定、安全的美国网络节点导航平台，提供精选的优质美国服务器、VPN资源及网络加速工具推荐。">
+    <meta name="keywords" content="美国十次超级导航,美国服务器,VPS推荐,VPN工具,网络加速,美国节点,超级导航">
+    <title>美国十次超级导航-优质美国服务器与网络加速资源推荐</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #004494;
+            --accent-color: #00d4ff;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --nav-height: 60px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f0f2f5;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 0.9rem;
+            width: 150px;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+            padding-bottom: 60px;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: calc(var(--nav-height) + 20px);
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .count {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Featured Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .more-link {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Cards Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .nav-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .card-header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: #e6f0ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .mini-tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: #f5f5f5;
+            color: #666;
+            border-radius: 4px;
+        }
+
+        .mini-tag.hot {
+            background: #fff0f0;
+            color: #d32f2f;
+        }
+
+        .card-footer {
+            padding: 12px 15px;
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+        }
+
+        .status-dot.stable {
+            background: #4caf50;
+        }
+
+        .status-dot.limited {
+            background: #ff9800;
+        }
+
+        .status-dot.down {
+            background: #f44336;
+        }
+
+        .visit-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .visit-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Banner Ad Placeholder */
+        .banner-ad {
+            width: 100%;
+            height: 90px;
+            background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px dashed #ccc;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-top: 10px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th {
+            background: #f8f9fa;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: #fafafa;
+        }
+
+        .check-icon {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 10px;
+                display: none; /* In a real app, toggle via JS */
+            }
+            
+            nav.mobile-active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: static;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>美国十次超级导航</span>
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">高速节点</a></li>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">评测榜单</a></li>
+                    <li><a href="#">使用教程</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索资源...">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>探索纯净美国网络空间</h1>
+            <p>汇聚全球优质美国服务器节点，提供高速、稳定、低延迟的网络加速体验，助您畅游互联网。</p>
+            <div class="hero-tags">
+                <span class="tag">🚀 5G加速技术</span>
+                <span class="tag">🔒 128位加密</span>
+                <span class="tag">🛡️ 无日志政策</span>
+                <span class="tag">🌍 覆盖全境</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Sidebar Navigation -->
+        <aside>
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">洛杉矶节点 <span class="count">128</span></a></li>
+                    <li><a href="#">纽约机房 <span class="count">95</span></a></li>
+                    <li><a href="#">硅谷专线 <span class="count">84</span></a></li>
+                    <li><a href="#">西雅图优选 <span class="count">76</span></a></li>
+                    <li><a href="#">迈阿密专线 <span class="count">43</span></a></li>
+                    <li><a href="#">德州BGP <span class="count">62</span></a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">极速通道</h3>
+                <ul class="category-list">
+                    <li><a href="#">流媒体解锁 <span class="count">300+</span></a></li>
+                    <li><a href="#">游戏加速 <span class="count">200+</span></a></li>
+                    <li><a href="#">外贸专线 <span class="count">150+</span></a></li>
+                    <li><a href="#">科研下载 <span class="count">88</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            
+            <!-- Featured Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">今日推荐资源</h2>
+                    <a href="#" class="more-link">查看更多 &rarr;</a>
+                </div>
+                <div class="card-grid">
+                    <!-- Card 1 -->
+                    <article class="nav-card">
+                        <div class="card-header">
+                            <div class="icon-box">🇺🇸</div>
+                            <div class="card-title">洛杉矶SJC-1 高速节点</div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">位于洛杉矶顶级数据中心，专为流媒体和下载优化。提供不限速的带宽资源，延迟低至20ms，支持多设备并发。</p>
+                            <div class="card-tags">
+                                <span class="mini-tag hot">不限速</span>
+                                <span class="mini-tag">直播流畅</span>
+                                <span class="mini-tag">5G加速</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="status"><span class="status-dot stable"></span> 稳定运行</div>
+                            <a href="#" class="visit-btn">立即访问</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="nav-card">
+                        <div class="card-header">
+                            <div class="icon-box">🇺🇸</div>
+                            <div class="card-title">纽约NYC-N4 纯净线路</div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">直连美国东部骨干网，针对金融和外贸业务优化。具备低丢包率和高吞吐量特点，适合长时间稳定连接。</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">低延迟</span>
+                                <span class="mini-tag">外贸专线</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="status"><span class="status-dot stable"></span> 稳定运行</div>
+                            <a href="#" class="visit-btn">立即访问</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="nav-card">
+                        <div class="card-header">
+                            <div class="icon-box">🇺🇸</div>
+                            <div class="card-title">硅谷SanJose 游戏专线</div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">专为FPS及竞技类游戏设计，消除游戏延迟。支持端到端加密，确保游戏数据传输安全，不掉线不掉帧。</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">电竞级</span>
+                                <span class="mini-tag">低延迟</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="status"><span class="status-dot stable"></span> 稳定运行</div>
+                            <a href="#" class="visit-btn">立即访问</a>
+                        </div>
+                    </article>
+
+                     <!-- Card 4 -->
+                     <article class="nav-card">
+                        <div class="card-header">
+                            <div class="icon-box">🇺🇸</div>
+                            <div class="card-title">迈阿密MIA-Blue 海外中转</div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">连接拉美及欧洲地区的高速中转站，适合需要跨区域访问的用户。具备优秀的国际出口带宽。</p>
+                            <div class="card-tags">
+                                <span class="mini-tag">国际出口</span>
+                                <span class="mini-tag">跨区优化</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="status"><span class="status-dot limited">排队中</span> 负载适中</div>
+                            <a href="#" class="visit-btn">立即访问</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="banner-ad">
+                [广告位：赞助商展示区 - 优质服务商推广]
+            </div>
+
+            <!-- Comparison Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">热门服务商对比</h2>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>服务商名称</th>
+                            <th>节点数量</th>
+                            <th>平均速度</th>
+                            <th>价格/月</th>
+                            <th>推荐指数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>SuperSpeed Pro</strong></td>
+                            <td>50+</td>
+                            <td>500Mbps</td>
+                            <td>$9.99</td>
+                            <td><span class="check-icon">★</span> 4.9</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NetPulse Elite</strong></td>
+                            <td>120+</td>
+                            <td>1Gbps</td>
+                            <td>$12.99</td>
+                            <td><span class="check-icon">★</span> 4.8</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FastLink USA</strong></td>
+                            <td>80+</td>
+                            <td>300Mbps</td>
+                            <td>$6.99</td>
+                            <td><span class="check-icon">★</span> 4.6</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">如何选择适合自己的美国节点？</div>
+                        <div class="faq-answer">建议根据主要用途选择。如果您需要观看Netflix或Hulu，建议选择洛杉矶或硅谷节点；如果是进行外贸业务，建议选择纽约或达拉斯节点以保证低延迟。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">这些资源是否支持流媒体解锁？</div>
+                        <div class="faq-answer">大部分推荐的节点均支持主流流媒体服务解锁，但部分特定节点可能会因地区版权策略限制，建议在使用前查看具体说明。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何保证连接的安全性？</div>
+                        <div class="faq-answer">所有推荐的服务商均采用AES-256位加密协议，并承诺无日志政策，确保您的上网隐私安全。</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        美国十次超级导航致力于为用户提供最新、最全的美国网络加速资源。我们筛选全球优质服务器，为您打造安全、高速的上网环境。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">提交资源</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱: support@us10nav.com</li>
+                        <li>Telegram: @us10nav</li>
+                        <li>工作时间: 9:00 - 18:00 (UTC-5)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 美国十次超级导航. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                       </html>
