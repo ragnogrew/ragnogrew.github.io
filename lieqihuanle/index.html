@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猎奇欢乐社区-分享脑洞大开的奇趣见闻与趣味内容</title>
+    <meta name="description" content="猎奇欢乐社区致力于汇聚全网最有趣、最独特、最令人捧腹的猎奇内容。无论是诡异脑洞、离奇故事、趣味冷知识还是奇葩经历，这里都是释放压力、寻找快乐的聚集地。">
+    <meta name="keywords" content="猎奇,欢乐,社区,脑洞,奇趣,离奇,搞笑">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-body: #f4f4f5;
+            --bg-card: #ffffff;
+            --text-main: #18181b;
+            --text-sub: #71717a;
+            --primary: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: #f3e8ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 14px 20px 14px 50px;
+            border-radius: 50px;
+            border: 1px solid #e4e4e7;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-sub);
+        }
+
+        /* Tags */
+        .tags-section {
+            margin-top: 24px;
+        }
+
+        .tags-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            background: white;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-sub);
+            border: 1px solid #e4e4e7;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            padding-bottom: 60px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e4e4e7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-category {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-excerpt {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid #f4f4f5;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .stats {
+            display: flex;
+            gap: 12px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-top: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Hot List */
+        .hot-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .hot-item {
+            background: var(--bg-card);
+            padding: 16px 20px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow);
+            transition: background 0.2s;
+        }
+
+        .hot-item:hover {
+            background: #fafafa;
+        }
+
+        .hot-rank {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent);
+            width: 30px;
+            text-align: center;
+        }
+
+        .hot-rank.top-1 { color: #ef4444; }
+        .hot-rank.top-2 { color: #f97316; }
+        .hot-rank.top-3 { color: #eab308; }
+
+        .hot-content {
+            flex: 1;
+        }
+
+        .hot-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .hot-meta {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        .hot-tag {
+            background: #fef3c7;
+            color: #d97706;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            border-top: 1px solid #e4e4e7;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-top: 12px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #f4f4f5;
+            color: #a1a1aa;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 10px;
+            }
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+            <span>猎奇欢乐社区</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">最新发现</a></li>
+                <li><a href="#">脑洞专区</a></li>
+                <li><a href="#">离奇事件</a></li>
+                <li><a href="#">冷知识</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">发布内容</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>探索世界的另一面</h1>
+            <p>这里没有枯燥的说教，只有令人捧腹的奇趣见闻、脑洞大开的离奇故事，以及能让你会心一笑的冷知识。</p>
+            
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="搜索奇葩经历、神秘现象或冷知识...">
+            </div>
+
+            <div class="tags-section">
+                <div class="tags-list">
+                    <span class="tag">🤯 脑洞大开</span>
+                    <span class="tag">👻 离奇事件</span>
+                    <span class="tag">🤡 趣味段子</span>
+                    <span class="tag">🧠 硬核冷知识</span>
+                    <span class="tag">🦄 奇葩物种</span>
+                    <span class="tag">🎬 神仙剪辑</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <div class="content-grid">
+            <!-- Featured Card -->
+            <article class="card" style="grid-column: span 2;">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/weird1/800/400" alt="Featured Content">
+                    <span class="card-category">今日推荐</span>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">为什么有些人的梦境如此真实？科学视角下的潜意识狂欢</h2>
+                    <p class="card-excerpt">梦境是我们大脑在睡眠中进行的“后台处理”活动。有时候，梦境的细节之丰富、逻辑之离奇，甚至超过了现实生活。本文带你走进潜意识的迷雾，解读那些让你惊醒的梦境背后的心理机制。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar">梦</div>
+                            <span>梦境观察员</span>
+                        </div>
+                        <div class="stats">
+                            <span class="stat-item">👁 1.2w</span>
+                            <span class="stat-item">💬 342</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Standard Card 1 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/food1/400/300" alt="Food">
+                    <span class="card-category">美食</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">你绝对没吃过的“黑暗料理”盘点</h3>
+                    <p class="card-excerpt">从榴莲披萨到香菜可乐，世界上总有一些食物挑战着人类的味蕾极限。看看这些奇葩美食，你敢尝试哪一种？</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar">食</div>
+                            <span>吃货小分队</span>
+                        </div>
+                        <div class="stats">
+                            <span class="stat-item">👁 8.5k</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Standard Card 2 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/tech1/400/300" alt="Tech">
+                    <span class="card-category">数码</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">程序员眼中的“崩溃”现场：Bug也是艺术</h3>
+                    <p class="card-excerpt">当代码报错时，屏幕上跳出的乱码有时竟然像极了抽象画。来看看那些让程序员痛并快乐着的“离奇Bug”。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar">码</div>
+                            <span>极客社区</span>
+                        </div>
+                        <div class="stats">
+                            <span class="stat-item">👁 6.2k</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Standard Card 3 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/animal1/400/300" alt="Animal">
+                    <span class="card-category">萌宠</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">猫咪的迷惑行为大赏：它到底在想什么？</h3>
+                    <p class="card-excerpt">猫咪踩奶、钻箱子、对着空气哈气……这些看似“猎奇”的行为背后，其实有着严谨的动物行为学解释。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar">猫</div>
+                            <span>铲屎官联盟</span>
+                        </div>
+                        <div class="stats">
+                            <span class="stat-item">👁 5.9k</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Standard Card 4 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/travel1/400/300" alt="Travel">
+                    <span class="card-category">旅行</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">世界上那些“诅咒”之地：探险者的禁区</h3>
+                    <p class="card-excerpt">百慕大三角、罗布泊……这些地方充满了未解之谜。探险家们留下的故事，既刺激又令人细思极恐。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar">探</div>
+                            <span>环球行者</span>
+                        </div>
+                        <div class="stats">
+                            <span class="stat-item">👁 4.1k</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Standard Card 5 -->
+             <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/skill1/400/300" alt="Skill">
+                    <span class="card-category">技巧</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">如何用一张纸折出一只“活”的千纸鹤？</h3>
+                    <p class="card-excerpt">传统折纸不仅仅是手工，更是一种空间思维的艺术。看似简单的步骤，实则暗藏玄机。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar">折</div>
+                            <span>手工达人</span>
+                        </div>
+                        <div class="stats">
+                            <span class="stat-item">👁 3.8k</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Hot List Section -->
+        <section class="section-header">
+            <h2 class="section-title">本周热门</h2>
+            <a href="#" class="view-all">查看全部 &rarr;</a>
+        </section>
+
+        <div class="hot-list">
+            <div class="hot-item">
+                <div class="hot-rank top-1">1</div>
+                <div class="hot-content">
+                    <div class="hot-title">我亲眼目击了“海市蜃楼”的真相，原来不是海！</div>
+                    <div class="hot-meta">地理探索 · 2.3万阅读</div>
+                </div>
+                <span class="hot-tag">神级</span>
+            </div>
+            <div class="hot-item">
+                <div class="hot-rank top-2">2</div>
+                <div class="hot-content">
+                    <div class="hot-title">把可乐倒进马桶会发生什么？结局令人大跌眼镜</div>
+                    <div class="hot-meta">生活实验 · 1.8万阅读</div>
+                </div>
+                <span class="hot-tag">实验</span>
+            </div>
+            <div class="hot-item">
+                <div class="hot-rank top-3">3</div>
+                <div class="hot-content">
+                    <div class="hot-title">如果不吃晚饭，身体会发生什么惊人的变化？</div>
+                    <div class="hot-meta">健康冷知识 · 1.5万阅读</div>
+                </div>
+                <span class="hot-tag">健康</span>
+            </div>
+            <div class="hot-item">
+                <div class="hot-rank">4</div>
+                <div class="hot-content">
+                    <div class="hot-title">那些年我们在学校里遇到的“奇葩”老师</div>
+                    <div class="hot-meta">校园回忆 · 1.2万阅读</div>
+                </div>
+            </div>
+            <div class="hot-item">
+                <div class="hot-rank">5</div>
+                <div class="hot-content">
+                    <div class="hot-title">为什么现在的年轻人越来越喜欢“发疯”？</div>
+                    <div class="hot-meta">心理吐槽 · 9800阅读</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span>猎奇欢乐社区</span>
+                </div>
+                <p>一个专门收集和分享世界上那些有趣、离奇、令人捧腹内容的社区。在这里，我们拒绝无聊，拥抱奇思妙想。</p>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">社区介绍</a></li>
+                    <li><a href="#">加入团队</a></li>
+                    <li><a href="#">广告合作</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">离奇事件</a></li>
+                    <li><a href="#">脑洞故事</a></li>
+                    <li><a href="#">趣味视频</a></li>
+                    <li><a href="#">奇葩生活</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">举报反馈</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 猎奇欢乐社区 版权所有. 本站内容仅供娱乐参考.
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
