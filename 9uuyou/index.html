@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="9uu有你有我足矣入口 - 专注为您提供安全、流畅的9uu在线娱乐平台，涵盖最新热门游戏、动漫及社区互动入口，致力于打造‘有你有我足矣’的数字娱乐体验。">
+    <meta name="keywords" content="9uu有你有我足矣入口,9uu,在线娱乐,游戏平台,动漫社区,入口导航">
+    <title>9uu有你有我足矣入口 - 热门在线娱乐平台与游戏指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fdcb6e;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-light: #f9f9fc;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Cards Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            height: 160px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--white);
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: #f0f3ff;
+            padding: 60px 0;
+        }
+
+        .step-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(108, 92, 231, 0.1);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .step-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: #b2bec3;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                gap: 15px;
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>9uu有你有我足矣入口</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门游戏</a></li>
+                    <li><a href="#">动漫专区</a></li>
+                    <li><a href="#">社区互动</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline" onclick="showLoginModal()">登录</button>
+                <button class="btn btn-primary" onclick="showRegisterModal()">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>连接你我，畅享数字娱乐</h1>
+            <p>9uu有你有我足矣入口，为您提供一站式在线娱乐服务平台。海量游戏、精彩动漫、活跃社区，让每一次点击都充满乐趣。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索您感兴趣的游戏或动漫...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 热门推荐 -->
+        <section class="section-title">
+            <h2>热门推荐</h2>
+            <p>精选当下最热门的在线娱乐内容</p>
+        </section>
+        <section class="grid-container">
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/game1/400/250" alt="热门游戏示例">
+                    <span class="card-badge">热门</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">幻想冒险：无尽之路</h3>
+                    <p class="card-desc">一款开放世界的RPG冒险游戏，探索未知的领域，与好友组队挑战强大的BOSS。</p>
+                    <div class="card-footer">
+                        <span class="card-meta">策略 · 冒险</span>
+                        <button class="btn btn-primary" style="padding: 6px 15px; font-size: 0.85rem;">立即进入</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/anime1/400/250" alt="热门动漫示例">
+                    <span class="card-badge">更新</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">星际少年：起源</h3>
+                    <p class="card-desc">最新连载的科幻动漫，讲述少年在宇宙中寻找家园的感人故事，精彩不容错过。</p>
+                    <div class="card-footer">
+                        <span class="card-meta">科幻 · 冒险</span>
+                        <button class="btn btn-primary" style="padding: 6px 15px; font-size: 0.85rem;">开始阅读</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/social1/400/250" alt="社区互动示例">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">玩家聚会大厅</h3>
+                    <p class="card-desc">与数百万玩家实时互动，分享游戏攻略，结交志同道合的朋友。</p>
+                    <div class="card-footer">
+                        <span class="card-meta">社交 · 互动</span>
+                        <button class="btn btn-primary" style="padding: 6px 15px; font-size: 0.85rem;">加入社区</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/tool1/400/250" alt="实用工具示例">
+                    <span class="card-badge">工具</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">游戏加速助手</h3>
+                    <p class="card-desc">专为游戏玩家打造的加速工具，优化网络环境，告别卡顿，流畅体验。</p>
+                    <div class="card-footer">
+                        <span class="card-meta">工具 · 实用</span>
+                        <button class="btn btn-primary" style="padding: 6px 15px; font-size: 0.85rem;">下载工具</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 平台优势 -->
+        <section class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>安全可靠</h3>
+                        <p>严格的内容审核机制，保障用户账号与个人信息安全。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+                        </div>
+                        <h3>极速流畅</h3>
+                        <p>先进的云游戏与CDN技术，随时随地畅享高清画质。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>海量资源</h3>
+                        <p>汇聚全网优质游戏与动漫资源，满足不同用户的娱乐需求。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 入口指南 -->
+        <section class="guide-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>如何开始您的旅程</h2>
+                    <p>简单几步，轻松开启9uu有你有我足矣入口的精彩体验</p>
+                </div>
+                <div class="step-list">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>注册账号</h3>
+                            <p>点击右上角注册按钮，使用手机号或邮箱快速创建个人账户，获取专属身份。</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>选择偏好</h3>
+                            <p>在个人中心设置您感兴趣的领域，系统将为您智能推荐最匹配的内容。</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>开始探索</h3>
+                            <p>进入首页，通过分类导航或搜索功能，发现您喜爱的游戏与动漫。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="container" style="padding: 60px 0;">
+            <div class="section-title">
+                <h2>常见问题</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="margin-bottom: 15px; background: var(--white); padding: 15px; border-radius: 8px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-dark);">如何访问9uu有你有我足矣入口？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">您可以直接点击本页面的首页导航栏，或者通过搜索引擎搜索“9uu有你有我足矣入口”进入官方网站。</p>
+                </details>
+                <details style="margin-bottom: 15px; background: var(--white); padding: 15px; border-radius: 8px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-dark);">平台是否支持移动端访问？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">是的，9uu有你有我足矣入口完美支持手机、平板等移动设备，您可以使用浏览器或APP在任何地方畅享服务。</p>
+                </details>
+                <details style="margin-bottom: 15px; background: var(--white); padding: 15px; border-radius: 8px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-dark);">如何保证游戏和动漫的安全性？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">我们与多家正规发行商合作，所有内容均经过严格审核，确保无毒无广告，为您的网络安全保驾护航。</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span style="color: #fff;">9uu</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">致力于为用户提供最优质的在线娱乐服务，让每一次相遇都充满惊喜。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>娱乐分类</h4>
+                    <ul>
+                        <li><a href="#">网络游戏</a></li>
+                        <li><a href="#">二次元动漫</a></li>
+                        <li><a href="#">社交互动</a></li>
+                        <li><a href="#">工具下载</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">官方社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 9uu有你有我足矣入口 版权所有 | 仅供展示用途</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互逻辑
+        function showLoginModal() {
+            // 这里可以扩展为实际的弹窗逻辑，此处仅作为演示
+            alert("登录功能入口：请前往官网或APP进行账号登录。");
+        }
+
+        function showRegisterModal() {
+            // 这里可以扩展为实际的弹窗逻辑，此处仅作为演示
+            alert("注册功能入口：新用户请填写信息完成注册。");
+        }
+
+        // 搜索框交互
+        const searchInput = document.querySelector('.search-box input');
+        const searchBtn = document.querySelector('.search-box button');
+
+        function performSearch() {
+            if(searchInput.value.trim() !== "") {
+                // 模拟搜索跳转
+                console.log("正在搜索：" + searchInput.value);
+                searchInput.value = "";
+                alert("正在为您跳转到搜索结果页面...");
+            }
+        }
+
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>
