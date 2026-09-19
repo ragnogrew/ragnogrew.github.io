@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>尚天瞳-专注智能视觉传感技术的研发与解决方案</title>
+    <meta name="description" content="尚天瞳致力于提供高精度、高可靠性的工业视觉传感器及智能检测解决方案。涵盖3D视觉、缺陷检测、机器视觉系统定制，助力制造业智能化升级。">
+    <meta name="keywords" content="尚天瞳,机器视觉,工业传感器,3D视觉,智能检测,视觉系统">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8e8;
+            --dark-bg: #1a1a2e;
+            --light-bg: #f4f7f6;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .btn-contact {
+            padding: 10px 25px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-contact:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        .btn-outline {
+            padding: 12px 30px;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 40px 30px;
+            background-color: var(--white);
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 168, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Solutions Section */
+        .solutions {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .solution-item {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .solution-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .solution-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .solution-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .solution-content {
+            padding: 25px;
+        }
+
+        .solution-tag {
+            font-size: 12px;
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .solution-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+
+        .solution-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .solution-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .solution-link:hover {
+            gap: 8px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary-color);
+            padding: 60px 0;
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Tech Specs Table */
+        .tech-specs {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .specs-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table th, .specs-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .specs-table th {
+            background-color: var(--light-bg);
+            color: var(--dark-bg);
+            font-weight: 600;
+            width: 30%;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specs-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item h3::before {
+            content: 'Q';
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            padding-left: 34px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: #b0b0b0;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h4 {
+            color: var(--white);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h5 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .solution-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>尚天瞳</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#features">核心技术</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#specs">产品参数</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-contact">联系我们</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>用精准视觉感知，赋能智能制造未来</h1>
+                    <p>尚天瞳专注于高精度机器视觉传感技术与智能检测系统的研发。我们为工业生产提供从3D测量到表面缺陷检测的全套视觉解决方案，助力企业实现自动化、智能化升级。</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary" onclick="window.location.href='#solutions'">探索方案</button>
+                        <button class="btn-outline" onclick="window.location.href='#specs'">查看参数</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder for a high-tech industrial vision system image -->
+                    <img src="https://picsum.photos/seed/techvision/600/400.jpg" alt="尚天瞳智能视觉检测系统" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心技术优势</h2>
+                    <p>依托自主研发的算法引擎与光学硬件，尚天瞳构建了行业领先的视觉感知能力</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 12h20M2 12l5-5m-5 5l5 5"/>
+                            </svg>
+                        </div>
+                        <h3>高精度3D测量</h3>
+                        <p>采用双目立体视觉与结构光技术，实现微米级空间定位与轮廓测量，误差率低于0.05%。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>实时缺陷检测</h3>
+                        <p>基于深度学习算法，支持微小划痕、污渍、异物等多种表面缺陷的毫秒级识别与剔除。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
+                        <h3>模块化设计</h3>
+                        <p>硬件与软件高度解耦，支持多种工业总线接口（GigE, USB3.0, CoaXPress），适配各类产线环境。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="solutions">
+            <div class="container">
+                <div class="section-header">
+                    <h2>行业应用解决方案</h2>
+                    <p>深耕多个垂直领域，提供定制化的视觉检测与测量方案</p>
+                </div>
+                <div class="solution-grid">
+                    <div class="solution-item">
+                        <div class="solution-img">
+                            <img src="https://picsum.photos/seed/automotive/400/300.jpg" alt="汽车零部件检测">
+                        </div>
+                        <div class="solution-content">
+                            <span class="solution-tag">汽车制造</span>
+                            <h3>汽车零部件外观检测</h3>
+                            <p>针对发动机盖、保险杠、车灯等复杂曲面进行表面质量检测，提升出厂良品率。</p>
+                            <a href="#" class="solution-link">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-img">
+                            <img src="https://picsum.photos/seed/electronics/400/300.jpg" alt="电子元件检测">
+                        </div>
+                        <div class="solution-content">
+                            <span class="solution-tag">电子科技</span>
+                            <h3>PCB板与电子元件AOI</h3>
+                            <p>实现PCB焊点缺失、短路、极性错误等缺陷的自动识别，保障电子产品质量。</p>
+                            <a href="#" class="solution-link">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-img">
+                            <img src="https://picsum.photos/seed/textile/400/300.jpg" alt="纺织行业检测">
+                        </div>
+                        <div class="solution-content">
+                            <span class="solution-tag">纺织服装</span>
+                            <h3>纺织品瑕疵检测</h3>
+                            <p>高速检测布匹上的破洞、色差、污渍，适应高速织机运行环境。</p>
+                            <a href="#" class="solution-link">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>累计服务客户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>系统检测准确率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50ms</h3>
+                        <p>单帧处理速度</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>8年</h3>
+                        <p>行业深耕经验</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specs Section -->
+        <section id="specs" class="tech-specs">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心产品规格</h2>
+                    <p>尚天瞳旗舰级视觉传感器参数一览</p>
+                </div>
+                <div class="specs-container">
+                    <table class="specs-table">
+                        <tbody>
+                            <tr>
+                                <th>光学分辨率</th>
+                                <td>5MP - 50MP 可选</td>
+                            </tr>
+                            <tr>
+                                <th>帧率</th>
+                                <td>最高 120fps (USB3.0)</td>
+                            </tr>
+                            <tr>
+                                <th>传感器类型</th>
+                                <td>Global Shutter CMOS / 1/1.8" - 1/1.2"</td>
+                            </tr>
+                            <tr>
+                                <th>工作温度</th>
+                                <td>-10℃ ~ +50℃ (工业级标准)</td>
+                            </tr>
+                            <tr>
+                                <th>接口协议</th>
+                                <td>GigE Vision / USB3.0 Vision</td>
+                            </tr>
+                            <tr>
+                                <th>防护等级</th>
+                                <td>IP67 / IP69K (可定制)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于尚天瞳产品与技术支持的相关咨询</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>尚天瞳的视觉系统可以部署在现有的产线上吗？</h3>
+                        <p>是的，我们的系统设计具有高度的灵活性。通过调整光源、镜头和安装支架，大部分现有产线都能快速适配尚天瞳的视觉检测方案，无需对产线进行大规模改造。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>如何获取定制化的视觉检测方案？</h3>
+                        <p>您可以联系我们的技术支持团队，提供样品图片或视频，我们的工程师将在24小时内给出初步的技术评估报告和报价方案。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>视觉系统的检测精度能达到多少？</h3>
+                        <p>精度取决于所使用的镜头、传感器分辨率以及被测物体的特性。在标准照明环境下，我们的3D测量精度可达0.02mm，2D检测精度可达像素级。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>是否提供软件二次开发接口？</h3>
+                        <p>当然，我们提供完整的SDK开发包，支持C++, C#, Python等多种语言接口，方便用户将检测功能集成到MES系统或企业内部软件中。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>尚天瞳</h4>
+                    <p>尚天瞳致力于成为全球领先的工业视觉技术提供商，通过精准的感知与智能的决策，帮助制造业伙伴实现降本增效与品质飞跃。</p>
+                    <p>地址：中国·XX高新技术产业开发区XX路XX号</p>
+                    <p>邮箱：contact@shangtiantong.com</p>
+                </div>
+                <div class="footer-links">
+                    <h5>产品中心</h5>
+                    <ul>
+                        <li><a href="#">3D视觉传感器</a></li>
+                        <li><a href="#">线阵相机</a></li>
+                        <li><a href="#">工业相机</a></li>
+                        <li><a href="#">智能光源</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>解决方案</h5>
+                    <ul>
+                        <li><a href="#">汽车制造</a></li>
+                        <li><a href="#">电子半导体</a></li>
+                        <li><a href="#">医药包装</a></li>
+                        <li><a href="#">金属加工</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>支持与服务</h5>
+                    <ul>
+                        <li><a href="#">技术文档</a></li>
+                        <li><a href="#">驱动下载</a></li>
+                        <li><a href="#">售后政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 尚天瞳科技发展有限公司 版权所有 | 隐私政策 | 服务条款</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+              </html>
